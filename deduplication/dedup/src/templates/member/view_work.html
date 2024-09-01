@@ -1,0 +1,37 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'member/member_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<blockquote>
+  <form name="form1" method="post" action="">
+    <table width="350" border="2" class="table">
+      <tr>
+        <th scope="row">Work</th>
+        <th>Description</th>
+        <th>Completion Date </th>
+        <th>Status</th>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        {% for i in val %}
+    <tr>
+      <th>&nbsp;{{i['work_name']}}</th>
+      <td>{{i['work description']}} </td>
+      <td>{{i['completion date']}}&nbsp;</td>
+      <td>
+        {{i['status']}}
+      </td>
+        <td><a href="updateworkstatus_member?id={{i['workid']}}#about" class="btn btn-primary">Update</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </form>
+</blockquote>
+</body>
+<!--</html>-->
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="complaint_replysnd#about">
+  <table border="1" class="table">
+    <tr>
+      <th>Reply</th>
+      <td><input type="text" name="textfield" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" value="SEND" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

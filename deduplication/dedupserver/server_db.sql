@@ -1,0 +1,85 @@
+/*
+SQLyog Community
+MySQL - 5.5.20-log : Database - dedup1
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`dedup1` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `dedup1`;
+
+/*Table structure for table `filekey` */
+
+DROP TABLE IF EXISTS `filekey`;
+
+CREATE TABLE `filekey` (
+  `gid` int(10) NOT NULL AUTO_INCREMENT,
+  `fname` text NOT NULL,
+  `key` varchar(200) NOT NULL,
+  PRIMARY KEY (`gid`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+/*Data for the table `filekey` */
+
+insert  into `filekey`(`gid`,`fname`,`key`) values 
+(1,'abc.jpg','9609506419174103344611497881632752186179861948058012441314169297932608751456655124466036616425356677901534686214736022284446631242605053730590111954400005'),
+(2,'new.jpg','3355828456772239056262774641249112634055014897747841867000829082045209391387261005623926259875729014207273753307704481081818599446696201617091696663861498');
+
+/*Table structure for table `filetable` */
+
+DROP TABLE IF EXISTS `filetable`;
+
+CREATE TABLE `filetable` (
+  `fid` int(10) NOT NULL AUTO_INCREMENT,
+  `gid` int(20) NOT NULL,
+  `uid` int(20) NOT NULL,
+  `tag` text NOT NULL,
+  `date` varchar(20) NOT NULL,
+  PRIMARY KEY (`fid`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
+/*Data for the table `filetable` */
+
+insert  into `filetable`(`fid`,`gid`,`uid`,`tag`,`date`) values 
+(1,1,16,'1bbe927172aa367e5308a89a563d9dce09f964382948fc53ac0ac866ee1c44acbd0c6f895f7605be9d7e58ced87d2e24f21a46a6578166200b4220f0d925c2d4','2023-05-19'),
+(2,1,25,'1bbe927172aa367e5308a89a563d9dce09f964382948fc53ac0ac866ee1c44acbd0c6f895f7605be9d7e58ced87d2e24f21a46a6578166200b4220f0d925c2d4','2023-05-19'),
+(3,2,25,'6146ebb41ddd22b81e12e28738203e611ce3cd3094abacf967e008d0554edbc645a42b70e465de4f4e5ddac10f29b9cf1d1fb43efa9c480429fde9024d70ad01','2023-05-19');
+
+/*Table structure for table `key_ss` */
+
+DROP TABLE IF EXISTS `key_ss`;
+
+CREATE TABLE `key_ss` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `key_s` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
+
+/*Data for the table `key_ss` */
+
+/*Table structure for table `tree` */
+
+DROP TABLE IF EXISTS `tree`;
+
+CREATE TABLE `tree` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `p` varchar(50) NOT NULL,
+  `lc` varchar(50) NOT NULL,
+  `rc` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+
+/*Data for the table `tree` */
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

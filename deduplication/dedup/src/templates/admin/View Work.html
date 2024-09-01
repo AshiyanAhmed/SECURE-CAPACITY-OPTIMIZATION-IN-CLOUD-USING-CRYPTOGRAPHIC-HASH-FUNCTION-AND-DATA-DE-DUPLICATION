@@ -1,0 +1,32 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="add_work#about">
+  <table border="1" class="table">
+    <tr>
+      <td>Work</td>
+      <td>Team Leader Name </td>
+      <td>Description</td>
+      <td>Date</td>
+      <td>Status</td>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>&nbsp;{{i['work_name']}}</td>
+      <td>&nbsp;{{i['fname']}} {{i['lname']}}</td>
+      <td>&nbsp;{{i['work description']}}</td>
+      <td>&nbsp;{{i['completion date']}}</td>
+      <td>&nbsp;{{i['status']}}</td>
+      <td><a href="delete_work?id={{i['wid']}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center">
+        <input type="submit" name="Submit" class="btn btn-primary" value="Add New" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

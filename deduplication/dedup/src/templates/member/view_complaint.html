@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'member/member_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="add_complaint#about">
+  <table width="300" border="2" class="table">
+    <tr>
+      <th>Complaint</th>
+      <th>Date</th>
+
+      <th>Reply</th>
+    </tr>
+    {% for i in val %}
+
+    <tr>
+      <td>{{i['complaint']}}</td>
+      <td>&nbsp;{{i['date']}}</td>
+      <td>&nbsp;{{i['reply']}}</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="3" scope="row"><input type="submit" name="Submit" class="btn btn-primary" value="Send Complaint"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

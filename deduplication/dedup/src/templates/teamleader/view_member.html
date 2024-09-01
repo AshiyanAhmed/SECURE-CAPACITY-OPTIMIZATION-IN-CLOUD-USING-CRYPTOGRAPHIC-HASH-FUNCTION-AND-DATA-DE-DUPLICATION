@@ -1,0 +1,43 @@
+<!--<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+{% extends 'teamleader/team_leader_index.html' %}
+{% block body %}
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Member</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="member_reg#about">
+  <table border="1" class="table">
+    <tr>
+      <td>Name</td>
+      <td>Place</td>
+      <td>Post</td>
+      <td>Pin</td>
+      <td>Phone</td>
+      <td>E-mail</td>
+      <td colspan="2">&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <td>{{i['fname']}} {{i['lname']}}</td>
+      <td>&nbsp;{{i['place']}}</td>
+      <td>&nbsp;{{i['post']}}</td>
+      <td>&nbsp;{{i['pin']}}</td>
+      <td>&nbsp;{{i['email']}}</td>
+      <td>&nbsp;{{i['phone']}}</td>
+      <td><a href="edit_member?id={{i['mid']}}#about" class="btn btn-warning">Edit </a></td>
+      <td><a href="delete_member?id={{i['mid']}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="8"><div align="center">
+        <input type="submit" name="Submit" class="btn btn-primary" value="Add New" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

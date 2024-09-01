@@ -1,0 +1,53 @@
+{% extends 'member/member_index.html' %}
+{% block body %}
+<body>
+<head><style>
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/*#customers tr:nth-child(even){background-color: #000000;}*/
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #000000;
+  color: white;
+}
+</style>
+</head>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <table class="table table-boardered" id="customers">
+    <tr>
+      <th width="100"><div align="center">File Name</div></th>
+      <td width="144"><label for="textfield"></label><div align="center">
+        <input type="text" name="textfield" id="textfield" value="{{val['filename']}}" class="form-control"/></div></td>
+    </tr>
+    <tr>
+      <th><div align="center">Date</div></th>
+      <td><label for="textfield2"></label><div align="center"> <input type ="text" name="textfield2" id="textfield2" value="{{val['date']}}" class="form-control"/></div></td>
+    </tr>
+    <!--<tr>-->
+      <!--<td>Details</td>-->
+      <!--<td><label for="textfield3"></label>-->
+      <!--<input type="text" name="textfield3" id="textfield3" value="{{val[3]}}" /></td>-->
+    <!--</tr>-->
+    <!--<tr>-->
+      <tr align="center">
+      <td colspan="2"><a class="btn btn-primaary" href="../static/download/{{val['filename']}}" download >Download</a></td>
+    </tr>
+  </table></div>
+</form>
+</body>
+{% endblock %}

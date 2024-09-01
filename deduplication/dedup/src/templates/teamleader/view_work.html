@@ -1,0 +1,41 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'teamleader/team_leader_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="assign_work">
+  <table width="300" border="2" class="table table-striped">
+    <tr>
+      <th scope="row">Work</th>
+      <th>Description</th>
+      <th>Completion Date </th>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">&nbsp;{{i['work_name']}}</th>
+      <td>{{i['work description']}} </td>
+      <td>{{i['completion date']}}&nbsp;</td>
+      <td>
+
+
+
+
+          <a href="assign_work?id={{i['wid']}}#about" class="btn btn-success" >Assign</a>
+
+
+
+
+
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

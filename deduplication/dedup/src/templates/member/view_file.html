@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'member/member_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="file_upload#about">
+  <table border="2" class="table">
+    <tr>
+      <th>File Name </th>
+      <th>Date</th>
+      <th>Description</th>
+      <td>&nbsp;</td>
+    </tr>
+    {% for i in data %}
+    <tr>
+      <td><a href="dwnld1?id={{ i['fid'] }}#about" class="btn btn-info">{{ i['filename'] }}</a></td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['description'] }}</td>
+      <td><a href="dltfile?id={{i['fid']}}" class="btn btn-danger">Delete</a></td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="4" scope="row"><input type="submit" name="Submit" class="btn btn-success" value="Upload New File"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

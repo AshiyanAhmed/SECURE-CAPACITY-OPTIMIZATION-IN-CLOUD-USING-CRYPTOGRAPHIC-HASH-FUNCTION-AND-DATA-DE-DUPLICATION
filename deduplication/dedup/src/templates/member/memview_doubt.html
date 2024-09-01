@@ -1,0 +1,31 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'member/member_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="add_doubt#about">
+  <table width="300" border="2" class="table">
+    <tr>
+      <th scope="row">Date</th>
+      <th>Doubt</th>
+      <th>Reply</th>
+    </tr>
+    {% for i in val %}
+    <tr>
+      <th scope="row">{{i['date']}}</th>
+      <td>{{i['doubt']}}</td>
+      <td>{{i['reply']}}&nbsp;</td>
+    </tr>
+    {% endfor %}
+    <tr>
+      <th colspan="3" scope="row"><input type="submit" name="Submit" class="btn btn-success" value="Ask Doubt"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

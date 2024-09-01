@@ -1,0 +1,30 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'teamleader/team_leader_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="">
+  <table width="300" border="2" class="table">
+    <tr>
+      <th scope="row">Member</th>
+      <th>Doubt</th>
+      <th>Date </th>
+      <td>&nbsp;</td>
+    </tr>
+     {% for i in val %}
+    <tr>
+      <th scope="row">{{i['fname']}}</th>
+      <td>{{i['doubt']}}</td>
+      <td>{{i['date']}}</td>
+      <td><a href="reply_doubt?id={{i['did']}}#about" class="btn btn-primary">Reply</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

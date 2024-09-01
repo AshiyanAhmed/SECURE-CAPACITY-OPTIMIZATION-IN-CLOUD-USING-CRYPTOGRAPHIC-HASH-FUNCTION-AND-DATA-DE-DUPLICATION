@@ -1,0 +1,33 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'member/member_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="updateworkstatus_member1">
+  <table width="300" border="2" class="table">
+    <tr>
+      <th>Work Status</th>
+      <th><select name="select">
+        <option>50% completed</option>
+
+        <option>90% completed</option>
+        <option>full completed</option>
+
+        <option>not started</option>
+
+
+
+      </select></th>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" class="btn btn-success" value="Send"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

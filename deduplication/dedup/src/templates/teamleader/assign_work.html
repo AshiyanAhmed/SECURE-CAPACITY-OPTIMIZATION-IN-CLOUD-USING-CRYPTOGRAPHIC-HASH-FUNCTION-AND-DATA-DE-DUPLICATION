@@ -1,0 +1,27 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'teamleader/team_leader_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form name="form1" method="post" action="assign_work1">
+  <table width="300" border="2" class="table">
+    <tr>
+      <th scope="row">Member</th>
+      <td><select name="select">
+        {% for i in val %}
+        <option value="{{i['mid']}}">{{i['fname']}}<br>{{i['lname']}}</option>
+        {% endfor %}
+      </select>      </td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" class="btn btn-success" value="Assign"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}

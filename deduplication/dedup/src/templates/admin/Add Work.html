@@ -1,0 +1,35 @@
+{% extends 'admin/admin_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="work_reg#about">
+  <table border="1" class="table">
+    <tr>
+      <td>Work</td>
+      <td><input type="text" name="work_name" /></td>
+    </tr>
+    <tr>
+      <td>Team Leader </td>
+      <td><select name="select">
+        {% for i in val %}
+        <option value="{{i['lid']}}"> {{i['fname']}} {{i['lname']}}</option>
+        {% endfor %}
+      </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input type="text" name="work_desc" /></td>
+    </tr>
+    <tr>
+    <td>Completion Date </td>
+      <td><input type="date" name="complete_date" /></td>
+    </tr>
+    <tr>
+      <td colspan="2"><div align="center">
+        <input type="submit" name="Submit" class="btn btn-primary" value="Add" />
+      </div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{% endblock %}

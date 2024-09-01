@@ -1,0 +1,28 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+{% extends 'member/member_index.html' %}
+{% block body %}
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/upload_file" method="post" enctype="multipart/form-data" name="form1">
+<!--<form action="/file_upload_post" method="post" enctype="multipart/form-data" name="form1">-->
+  <table width="300" border="2" class="table">
+    <tr>
+      <th scope="row">File</th>
+      <td><input type="file" class="btn btn-success" name="file"></td>
+    </tr>
+    <tr>
+      <th scope="row">Description</th>
+      <td><textarea name="textarea"></textarea></td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><input type="submit" name="Submit" class="btn btn-success" value="Upload"></th>
+    </tr>
+  </table>
+</form>
+</body>
+<!--</html>-->
+{% endblock %}
